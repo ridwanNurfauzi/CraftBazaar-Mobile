@@ -10,6 +10,8 @@ import '../modules/productsByCategory/bindings/products_by_category_binding.dart
 import '../modules/productsByCategory/views/products_by_category_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/seller/bindings/seller_binding.dart';
+import '../modules/seller/views/seller_view.dart';
 
 part 'app_routes.dart';
 
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.PRODUCTS_BY_CATEGORY,
       page: () => ProductsByCategoryView(),
       binding: ProductsByCategoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.SELLER,
+      page: () => SellerView(),
+      binding: SellerBinding(),
     ),
   ];
 }

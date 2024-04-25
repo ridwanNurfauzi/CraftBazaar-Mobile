@@ -2,6 +2,7 @@
 
 import 'package:craftbazaar/app/data/models/product.dart';
 import 'package:craftbazaar/app/providers/api.dart';
+import 'package:craftbazaar/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -159,9 +160,17 @@ class ProductView extends GetView<ProductController> {
                         left: 10,
                         right: 10,
                       ),
-                      child: Text(
-                        "${productCtrl.product.value.seller!.name}",
-                        style: TextStyle(color: Color(0xFF505050)),
+                      child: InkWell(
+                        onTap: () {
+                          Get.toNamed(Routes.SELLER, arguments: {
+                            "code": productCtrl.product.value.seller!.code
+                                .toString()
+                          });
+                        },
+                        child: Text(
+                          "${productCtrl.product.value.seller!.name}",
+                          style: TextStyle(color: Color(0xFF505050)),
+                        ),
                       ),
                     ),
                     Padding(padding: EdgeInsets.all(5)),
